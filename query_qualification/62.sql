@@ -39,8 +39,8 @@ WHERE d_month_seq BETWEEN 1200 AND 1200 + 11
 GROUP BY w_substr,
          sm_type,
          web_name
-ORDER BY 1,
-         2,
-         3
+ORDER BY w_substr,
+         sm_type,
+         web_name
 LIMIT 100;
 

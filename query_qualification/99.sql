@@ -25,7 +25,7 @@ SELECT w_substr ,
                ELSE 0
            END) AS ">120 days"
 FROM catalog_sales ,
-  (SELECT SUBSTRING(w_warehouse_name,1,20) w_substr, *
+  (SELECT SUBSTR(w_warehouse_name,1,20) w_substr, *
    FROM warehouse) AS sq1 ,
      ship_mode ,
      call_center ,

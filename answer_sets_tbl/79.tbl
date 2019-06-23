@@ -1,4 +1,4 @@
-C_LAST_NAME|C_FIRST_NAME|SUBSTR|SS_TICKET_NUMBER|AMT|PROFIT
+C_LAST_NAME|C_FIRST_NAME|SUBSTR(s_city,1,30)|SS_TICKET_NUMBER|AMT|PROFIT
 string_null|string_null|string_null|int|double_null|double_null
 null|null|Fairview|158139|3721.39|-23039.01
 null|null|Fairview|30114|165.75|-17434.48

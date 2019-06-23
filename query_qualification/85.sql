@@ -1,5 +1,5 @@
 
-SELECT SUBSTRING(r_reason_desc,1,20) ,
+SELECT SUBSTR(r_reason_desc,1,20) ,
        avg(ws_quantity) ,
        avg(wr_refunded_cash) ,
        avg(wr_fee)
@@ -51,7 +51,7 @@ WHERE ws_web_page_sk = wp_web_page_sk
                             'AR')
            AND ws_net_profit BETWEEN 50 AND 250) )
 GROUP BY r_reason_desc
-ORDER BY SUBSTRING(r_reason_desc,1,20) ,
+ORDER BY SUBSTR(r_reason_desc,1,20) ,
          avg(ws_quantity) ,
          avg(wr_refunded_cash) ,
          avg(wr_fee)

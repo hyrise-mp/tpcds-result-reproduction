@@ -9,7 +9,7 @@ FROM web_sales,
 WHERE ws_bill_customer_sk = c_customer_sk
   AND c_current_addr_sk = ca_address_sk
   AND ws_item_sk = i_item_sk
-  AND (SUBSTRING(ca_zip,1,5) IN ('85669',
+  AND (SUBSTR(ca_zip,1,5) IN ('85669',
                               '86197',
                               '88274',
                               '83405',

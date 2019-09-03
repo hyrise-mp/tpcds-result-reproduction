@@ -1,7 +1,7 @@
 
 SELECT c_last_name,
        c_first_name,
-       SUBSTRING(s_city,1,30),
+       SUBSTR(s_city,1,30),
        ss_ticket_number,
        amt,
        profit
@@ -33,7 +33,7 @@ FROM
 WHERE ss_customer_sk = c_customer_sk
 ORDER BY c_last_name,
          c_first_name,
-         SUBSTRING(s_city,1,30),
+         SUBSTR(s_city,1,30),
          profit
 LIMIT 100;
 

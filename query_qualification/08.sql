@@ -7,9 +7,9 @@ FROM store_sales,
 
   (SELECT ca_zip
    FROM
-     (SELECT SUBSTRING(ca_zip, 1, 5) ca_zip
+     (SELECT SUBSTR(ca_zip, 1, 5) ca_zip
       FROM customer_address
-      WHERE SUBSTRING(ca_zip, 1, 5) IN ('24128',
+      WHERE SUBSTR(ca_zip, 1, 5) IN ('24128',
                                      '76232',
                                      '65084',
                                      '87816',
@@ -411,7 +411,7 @@ FROM store_sales,
                                      '35576') INTERSECT
         SELECT ca_zip
         FROM
-          (SELECT SUBSTRING(ca_zip, 1, 5) ca_zip,
+          (SELECT SUBSTR(ca_zip, 1, 5) ca_zip,
                   count(*) cnt
            FROM customer_address,
                 customer
@@ -423,7 +423,7 @@ WHERE ss_store_sk = s_store_sk
   AND ss_sold_date_sk = d_date_sk
   AND d_qoy = 2
   AND d_year = 1998
-  AND (SUBSTRING(s_zip, 1, 2) = SUBSTRING(V1.ca_zip, 1, 2))
+  AND (SUBSTR(s_zip, 1, 2) = SUBSTR(V1.ca_zip, 1, 2))
 GROUP BY s_store_name
 ORDER BY s_store_name
 LIMIT 100;

@@ -1,3 +1,4 @@
+
 SELECT w_substr,
        sm_type,
        web_name,
@@ -25,8 +26,7 @@ SELECT w_substr,
                ELSE 0
            END) AS ">120 days"
 FROM web_sales,
-  (SELECT SUBSTR(w_warehouse_name,1,20) w_substr,
-          *
+  (SELECT SUBSTR(w_warehouse_name,1,20) w_substr, *
    FROM warehouse) sq1,
      ship_mode,
      web_site,

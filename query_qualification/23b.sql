@@ -1,3 +1,4 @@
+-- rewritten to not use subqueries in HAVING
 WITH frequent_ss_items AS
   (SELECT itemdesc,
           i_item_sk item_sk,
@@ -5,6 +6,7 @@ WITH frequent_ss_items AS
           count(*) cnt
    FROM store_sales,
         date_dim,
+
      (SELECT SUBSTRING(i_item_desc, 1, 30) itemdesc,
              *
       FROM item) sq1
@@ -82,3 +84,4 @@ ORDER BY c_last_name,
          c_first_name,
          sales
 LIMIT 100;
+

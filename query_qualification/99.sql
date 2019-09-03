@@ -40,6 +40,6 @@ GROUP BY w_substr ,
          cc_name
 ORDER BY w_substr ,
          sm_type ,
-        cc_name
+         cc_name
 LIMIT 100;
 

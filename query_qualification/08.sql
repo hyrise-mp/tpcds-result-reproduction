@@ -1,8 +1,10 @@
+
 SELECT s_store_name,
        sum(ss_net_profit)
 FROM store_sales,
      date_dim,
      store,
+
   (SELECT ca_zip
    FROM
      (SELECT SUBSTRING(ca_zip, 1, 5) ca_zip

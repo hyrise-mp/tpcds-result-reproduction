@@ -1,11 +1,15 @@
-WITH frequent_ss_items AS
+-- rewritten to not use subqueries in HAVING
+ WITH frequent_ss_items AS
   (SELECT itemdesc,
           i_item_sk item_sk,
           d_date solddate,
           count(*) cnt
    FROM store_sales,
         date_dim,
-     (SELECT SUBSTRING(i_item_desc, 1, 30) itemdesc, * FROM item) sq1
+
+     (SELECT SUBSTRING(i_item_desc, 1, 30) itemdesc,
+             *
+      FROM item) sq1
    WHERE ss_sold_date_sk = d_date_sk
      AND ss_item_sk = i_item_sk
      AND d_year IN (2000,
@@ -63,3 +67,4 @@ FROM
      AND ws_item_sk = item_sk
      AND ws_bill_customer_sk = c_customer_sk) sq3
 LIMIT 100;
+

@@ -1,4 +1,4 @@
-ca_zip|ca_city|SUM(ws_sales_price)
+ca_zip|ca_city|sum_ws_sales_price
 string|string|double_null
 10150|Bunker Hill|20.25
 16098|Five Points|18.05

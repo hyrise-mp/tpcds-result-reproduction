@@ -46,4 +46,3 @@ WHERE asceding.rnk = descending.rnk
   AND i2.i_item_sk=descending.item_sk
 ORDER BY asceding.rnk
 LIMIT 100;
-
